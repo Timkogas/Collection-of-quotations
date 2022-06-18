@@ -1,0 +1,37 @@
+.add_block {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.add_block select {
+  width: 320px;
+  font-size: 30px;
+}
+
+.add_block p {
+  font-size: 25px;
+}
+.add_block input {
+  width: 670px;
+  font-size: 25px;
+  margin-top: 10px;
+}
+.add_block textarea {
+  width: 670px;
+  height: 300px;
+  font-size: 25px;
+  margin-top: 10px;
+  resize: none;
+}
+.add_block button {
+  width: 120px;
+  font-size: 25px;
+}
+.add_block a {
+  text-decoration: none;
+  color: black
+}
