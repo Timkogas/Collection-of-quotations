@@ -1,0 +1,37 @@
+.edit_block {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.edit_block select {
+  width: 320px;
+  font-size: 30px;
+}
+
+.edit_block p {
+  font-size: 25px;
+}
+.edit_block input {
+  width: 670px;
+  font-size: 25px;
+  margin-top: 10px;
+}
+.edit_block textarea {
+  width: 670px;
+  height: 300px;
+  font-size: 25px;
+  margin-top: 10px;
+  resize: none;
+}
+.edit_block button {
+  width: 120px;
+  font-size: 25px;
+}
+.edit_block a {
+  text-decoration: none;
+  color: black
+}
