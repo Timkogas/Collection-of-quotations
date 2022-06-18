@@ -16,7 +16,10 @@ function QuotesPage() {
     const fetchPost = async () => {
       setLoading(true)
       if (params.id) {
-
+        await axios.get(`${baseUrl}.json?orderBy="category"&equalTo="${params.id}"`)
+        .then((response)=>{
+          setQuotes(response.data)
+        })
       } else {
         await axios.get(baseUrl + '.json')
         .then((response)=>{
