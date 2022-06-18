@@ -1,13 +1,13 @@
-import './Layout.css'
-import Navigation from '../../components/Navigation/Navigation';
+import {Outlet} from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
 
-
-function Layout() {
-  return (
-    <>
-    
-    </>
-  );
-}
+const Layout = props => (
+  <>
+    <Navigation></Navigation>
+    <main className="Layout-Content">
+      <Outlet/>
+    </main>
+  </>
+);
 
 export default Layout;
