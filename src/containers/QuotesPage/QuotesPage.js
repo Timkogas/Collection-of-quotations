@@ -1,6 +1,6 @@
 import './QuotesPage.css'
 import Quotes from '../../components/Quotes/Quotes';
-import { useState, useEffect } from 'react'
+import { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
 import Preloader from '../../UI/Preloader/Preloader'
@@ -11,6 +11,23 @@ function QuotesPage() {
   const params = useParams()
   const [quotes, setQuotes] = useState({})
   const [loading, setLoading] = useState(false)
+
+
+  const fetchPost = async () => {
+    setLoading(true)
+    if (params.id) {
+      await axios.get(`${baseUrl}.json?orderBy="category"&equalTo="${params.id}"`)
+      .then((response)=>{
+        setQuotes(response.data)
+      })
+    } else {
+      await axios.get(baseUrl + '.json')
+      .then((response)=>{
+        setQuotes(response.data)
+      })
+    }
+    setLoading(false)
+  }
 
   useEffect (()=>{
     const fetchPost = async () => {
@@ -35,8 +52,11 @@ function QuotesPage() {
 
   }
 
-  const deleteQuote = (id) => {
-
+  const deleteQuote = async (id) => {
+    setLoading(true)
+    await axios.delete(baseUrl + id +'.json')
+    fetchPost()
+    setLoading(false)
   }
 
 
