@@ -17,7 +17,12 @@
 }
 .header_logo {
   margin-left: 40px;
+}
+.header_logo_link {
+  text-decoration: none;
+  font-size: 30px;
   color:rgb(245, 239, 232);
+  font-weight: bolder;
 }
 .header_menu {
   display: flex;

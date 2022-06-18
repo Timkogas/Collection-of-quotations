@@ -2,6 +2,7 @@ import './Quotes.css'
 import Quote from './Quote/Quote';
 import QuotesCategories from './QuotesCategories/QuotesCategories';
 import QuotesWrapper from './QuotesWrapper/QuotesWrapper';
+import Preloader from '../../UI/Preloader/Preloader';
 
 
 function Quotes(props) {
@@ -17,6 +18,7 @@ function Quotes(props) {
          chooseCategory={(e)=>{props.chooseCategory(e)}}
       />
       <QuotesWrapper>
+        <Preloader showPlaceholder={props.showPlaceholder}/>
         {quotes.length ? quotes.map((quote)=>{
           return (
             <Quote

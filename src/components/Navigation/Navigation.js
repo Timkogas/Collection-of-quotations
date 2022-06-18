@@ -1,11 +1,12 @@
 import './Navigation.css';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 function Navigation() {
   return (
     <header className='header'>
       <div className='header_logo'>
-        <h2>Quotes Central</h2>
+        
+        <Link to='/' className='header_logo_link'>Quotes Central</Link>
       </div>
 
       <div  className='header_menu'>

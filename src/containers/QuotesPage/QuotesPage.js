@@ -1,9 +1,8 @@
 import './QuotesPage.css'
 import Quotes from '../../components/Quotes/Quotes';
 import { useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate  } from 'react-router-dom'
 import axios from 'axios';
-import Preloader from '../../UI/Preloader/Preloader'
 
 const baseUrl = 'https://js-8-timur-ermolaev-default-rtdb.firebaseio.com/quotes/'
 
@@ -48,8 +47,9 @@ function QuotesPage() {
     fetchPost()
   }, [params])
 
+  const navigate = useNavigate();
   const editQuote = (id) => {
-
+    navigate(`/quotes/${id}/edit`)
   }
 
   const deleteQuote = async (id) => {
@@ -62,8 +62,8 @@ function QuotesPage() {
 
   return (
     <>
-    <Preloader showPlaceholder={loading}/>
     <Quotes
+      showPlaceholder={loading}
       deleteQuote={deleteQuote}
       editQuote={editQuote}
       quotes={quotes}
