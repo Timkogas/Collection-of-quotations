@@ -5,17 +5,22 @@ import axios from 'axios';
 import Preloader from '../../UI/Preloader/Preloader'
 import { useNavigate } from 'react-router-dom';
 
+const baseUrl = 'https://js-8-timur-ermolaev-default-rtdb.firebaseio.com/quotes/'
+
 function AddQuote() {
   const [selectValue, setSelectValue] = useState('')
   const [inputValue, setInputValue] = useState('')
   const [textAreaValue, setTextAreaValue] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const inputChange = (e) => {
+  const inputChangeHandler = (e) => {
     setInputValue(e.target.value)
   }
+  const selectChangeHandler = (e) => {
+    setSelectValue(e.target.value)
+  }
 
-  const textAreaChange = (e) => {
+  const textAreaChangeHandler = (e) => {
     setTextAreaValue(e.target.value)
   }
 
@@ -24,13 +29,23 @@ function AddQuote() {
   const AddQuote = async (e) => {
     setLoading(true)
     e.preventDefault();
+    await axios.post(baseUrl + '.json', {author: inputValue, category: selectValue, text: textAreaValue})
+    navigate(`/quotes/${selectValue}`);
     setLoading(false)
   }
 
   return (
     <>
       <Preloader showPlaceholder={loading}/>
-      <AddQuoteForm/>
+      <AddQuoteForm
+        AddQuote={(e)=>{AddQuote(e)}}
+        textAreaValue={textAreaValue}
+        selectValue={selectValue}
+        inputValue={inputValue}
+        textAreaChangeHandler={(e)=>{textAreaChangeHandler(e)}}
+        inputChangeHandler={(e)=>{inputChangeHandler(e)}}
+        selectChangeHandler={(e)=>{selectChangeHandler(e)}}
+      />
     </>
   );
 }

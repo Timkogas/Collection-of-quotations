@@ -8,9 +8,9 @@ function EditQuoteForm(props) {
         <h1>Edit quote</h1>
 
         <select onChange={props.selectChange} name='select' value={props.selectValue}>
-          {Categories.map((category)=>{
+          {Categories.map((category, i)=>{
             return (
-              <option value={category.id}>{category.title}</option>
+              <option key={i} value={category.id}>{category.title}</option>
             )
           })}
         </select>
