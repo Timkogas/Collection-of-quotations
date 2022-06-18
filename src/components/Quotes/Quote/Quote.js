@@ -1,17 +1,17 @@
 import './Quote.css'
 
-function Quote() {
+function Quote(props) {
   return (
     <div className='Quote'>
       <div className='Quote_content'>
-        "loremloremloremloremloremloremloremloremloremloremlorem loremloremloremloremloremloremlorem loremloremloremloremloremlorem loremloremloremloremloremlorem loremloremloremlorem"
+        "{props.text}"
         <div className='Quote_btns'>
-          <button>Edit</button>
-          <button>Delete</button>
+          <button onClick={props.editQuote} >Edit</button>
+          <button onClick={props.deleteQuote} >Delete</button>
         </div>
 
       </div>
-      <p className='Quote_author'>&#8212; author</p>
+      <p className='Quote_author'>&#8212; {props.author}</p>
     </div>
   );
 }
