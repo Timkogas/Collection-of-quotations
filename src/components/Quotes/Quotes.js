@@ -13,9 +13,11 @@ function Quotes(props) {
 
   return (
     <div className='Qoutes'>
-      <QuotesCategories/>
+      <QuotesCategories
+         chooseCategory={(e)=>{props.chooseCategory(e)}}
+      />
       <QuotesWrapper>
-        {quotes ? quotes.map((quote)=>{
+        {quotes.length ? quotes.map((quote)=>{
           return (
             <Quote
               key={quote.id}

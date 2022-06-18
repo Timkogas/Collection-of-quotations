@@ -39,6 +39,7 @@ function QuotesPage() {
 
   }
 
+
   return (
     <>
     <Preloader showPlaceholder={loading}/>
