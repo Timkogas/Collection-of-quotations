@@ -6,7 +6,7 @@ import Quotes from '../../components/Quotes/Quotes';
 function QuotesPage() {
   return (
     <>
-    
+    <Quotes/>
     </>
   );
 }

@@ -1,0 +1,19 @@
+.Quote {
+  padding: 10px;
+  border: 3px solid black;
+  font-size: 25px;
+}
+.Quote_content {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.Quote_btns {
+  display: flex;
+  gap: 10px;
+}
+.Quote_btns button{
+  height: 30px;
+  width: 70px;
+  font-size: 20px;
+}

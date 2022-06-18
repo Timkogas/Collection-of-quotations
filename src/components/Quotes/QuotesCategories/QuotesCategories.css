@@ -1,0 +1,12 @@
+.QuotesCategories {
+  list-style: none;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 300px
+}
+.QuotesCategory:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
